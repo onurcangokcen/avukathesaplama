@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tazminat Hesaplama</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="icon" href="../RESİMLER/favicon-32x32.png" type="image/x-icon" />
+
+</head>
+
+<body>
+   <!-- Headerın Çağrıldığı Bölüm -->
+   <div class="d-grid gap-2">
+    <div id="header2-placeholder"></div>
+
+    <!-- Sayfadaki İçeriklerin Başladığı Bölüm -->
+    <section class="contact-us-section"
+      style="min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding-top: 10px;">
+      <div class="container d-flex gap-5" style="max-width: 700px;">
+
+    
+        <!-- Kullanıcıdan Değerlerin Alındığı ve Sonucunun Gösterildiği Kısım  -->
+        <div class="form-wrapper" style="max-width: 350px; width: 100%;">
+          <div class="contact-us-form gray-light-bg rounded p-4 shadow">
+            <h5 class="text-center mb-4">Kıdem Tazminatı Hesaplama</h5>
+
+            <form id="caForm2">
+
+              <div class="form-group mb-3">
+                <input type="text" class="form-control BrutUcret" id="hesapGiris" name="number2" placeholder="Brüt Aylık Ücretinizi Giriniz"
+                  required>
+              </div>
+
+              <!-- İşe Giriş Tarihi -->
+              <div class="mb-3">
+                <label class="form-label fw-semibold">İşe Giriş Tarihinizi Giriniz</label>
+                <div class="d-flex gap-2">
+                  <select id="gunSelect" class="form-select" name="gun" required>
+                    <option value="" selected disabled>Gün</option>
+                  </select>
+
+                  <select id="girisAy" name="girisAy" class="form-select" aria-label="Ay" required>
+                    <option value="" selected disabled>Ay</option>
+                    <option value="1">Ocak</option>
+                    <option value="2">Şubat</option>
+                    <option value="3">Mart</option>
+                    <option value="4">Nisan</option>
+                    <option value="5">Mayıs</option>
+                    <option value="6">Haziran</option>
+                    <option value="7">Temmuz</option>
+                    <option value="8">Ağustos</option>
+                    <option value="9">Eylül</option>
+                    <option value="10">Ekim</option>
+                    <option value="11">Kasım</option>
+                    <option value="12">Aralık</option>
+                  </select>
+
+                  <select id="girisYil" name="girisYil" class="form-select" aria-label="Yıl" required>
+                    <option value="" selected disabled>Yıl</option>
+                    <option value="2025">2025</option>
+                    <!-- ... -->
+                    <option value="1950">1950</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- İşten Çıkış Tarihi -->
+              <div class="mb-3">
+                <label class="form-label fw-semibold">İşten Çıkış Tarihinizi Giriniz</label>
+                <div class="d-flex gap-2">
+                  <select id="cikisGun" name="cikisGun" class="form-select" aria-label="Gün" required>
+                    <option value="" selected disabled>Gün</option>
+                    <option value="1">1</option>
+                    <!-- ... -->
+                    <option value="31">31</option>
+                  </select>
+
+                  <select id="cikisAy" name="cikisAy" class="form-select" aria-label="Ay" required>
+                    <option value="" selected disabled>Ay</option>
+                    <option value="1">Ocak</option>
+                    <option value="2">Şubat</option>
+                    <option value="3">Mart</option>
+                    <option value="4">Nisan</option>
+                    <option value="5">Mayıs</option>
+                    <option value="6">Haziran</option>
+                    <option value="7">Temmuz</option>
+                    <option value="8">Ağustos</option>
+                    <option value="9">Eylül</option>
+                    <option value="10">Ekim</option>
+                    <option value="11">Kasım</option>
+                    <option value="12">Aralık</option>
+                  </select>
+
+                  <select id="cikisYil" name="cikisYil" class="form-select" aria-label="Yıl" required>
+                    <option value="" selected disabled>Yıl</option>
+                    <option value="2025">2025</option>
+                    <!-- ... -->
+                    <option value="1950">1950</option>
+                  </select>
+                </div>
+                <hr style="border: none; border-top: 5px solid #080202; margin: 10px 0;">
+                 <div id="kidemAlert" class="alert d-none" role="alert"></div>
+                <div class="form-group mb-4">
+                  <label class="form-label fw-semibold">Hesaplama Sonucu :</label>
+                  <input type="text" class="form-control" id="KidemTazminatSonuc" style="margin-top: 1rem;" name="ca"
+                    placeholder="Tazminat Tutarı" readonly>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <button type="submit" class="btn btn-primary btn-md w-100 py-2 kidemTazminatHesapla">Hesapla</button>
+                </div>
+                <div class="col-6">
+                  <button type="reset" class="btn btn-secondary btn-md w-100 py-2">Temizle</button>
+                </div>
+              </div>
+            </form>
+            <small class="text-muted" style="display: block; text-align: justify;">
+              Kıdem tazminatına esas üst sınır, Temmuz 2025 itibarıyla 53.919,68 TL olarak belirlenmiştir.
+            </small>
+          </div>
+        </div>
+
+         <!-- Hesap Makinesi Butonları-->
+        <div class="form-wrapper" style="max-width: 350px; width: 100%;">
+          <div class="contact-us-form gray-light-bg rounded p-4 shadow">
+            <div class="d-grid gap-2 mb-3">
+              <div class="d-flex justify-content-between">
+                <button class=".sayi btn btn-outline-primary w-25" onclick="ekleSayi(1)">1</button>
+                <button class="btn btn-outline-primary w-25" onclick="ekleSayi(2)">2</button>
+                <button class="btn btn-outline-primary w-25" onclick="ekleSayi(3)">3</button>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button class="btn btn-outline-primary w-25" onclick="ekleSayi(4)">4</button>
+                <button class="btn btn-outline-primary w-25" onclick="ekleSayi(5)">5</button>
+                <button class="btn btn-outline-primary w-25" onclick="ekleSayi(6)">6</button>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button class="btn btn-outline-primary w-25" onclick="ekleSayi(7)">7</button>
+                <button class="btn btn-outline-primary w-25" onclick="ekleSayi(8)">8</button>
+                <button class="btn btn-outline-primary w-25" onclick="ekleSayi(9)">9</button>
+              </div>
+              <div class="d-flex justify-content-center gap-2">
+                <button class="btn btn-outline-primary w-25" onclick="ekleNokta()">.</button>
+                <button class="btn btn-outline-primary w-25" onclick="ekleSayi(0)">0</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../js-fonksiyonlar/kidemhesapla.js"></script>
+    <script src="../ui.js"></script>
+    <script src="../app.js"></script>
+</body>
+</html>

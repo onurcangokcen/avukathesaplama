@@ -1,0 +1,229 @@
+section{
+    background-color: white !important;
+}
+
+.navbar navbar-expand-lg navbar-light bg-light {
+    background-color:lightgreen;
+}
+
+.btn{
+    background-color: rgb(151, 73, 72) !important;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white !important;
+}
+
+.btn:hover{
+    background-color:#7dab7d !important;
+}
+
+.green-sm {
+    background-color: #7dab7d; 
+}
+
+#navbarMenu{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.btn-outline-light:hover{
+    color:white;
+}
+
+.navbar-brand img {
+    height: 48px;
+    object-fit: contain;
+}
+
+.hero-section {
+    position: relative;
+    background-image:
+        linear-gradient(rgba(144, 238, 144, 0.5), rgba(144, 238, 144, 0.5)),
+        url('RESİMLER/indir5.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 100%;
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.content-section {
+    background-color: #ffffff;
+    color: #212529;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+#calculator{
+    width: 320px;
+    height: 465px;
+    border: 1px solid lightgrey;
+    padding: 4px;
+    color:white;
+}
+
+#containerCalculator{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    height: 100vh;
+    color:white;
+}
+
+.alert-info{
+    background-color: #7dab7d;
+}
+
+
+.card-body, .card-title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+}
+
+
+.card {
+    min-width: 250px; 
+    max-width: 300px; 
+    min-height: 400px; 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 10px; 
+    box-sizing: border-box;
+    flex: 1 1 100%;
+    text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+}
+
+.card-img-top {
+    width: 100%;
+    max-height: 120px;
+    height: auto;
+    margin: 10px auto;
+    object-fit: contain;
+     display: block;
+}
+
+
+.list-group-item {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.list-group-item .btn {
+    width: 100%;
+    margin: 0;
+}
+
+.list-group {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    width: 100%; 
+    margin-top: auto;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white; 
+}
+
+#header-placeholder,
+#cards-placeholder {
+    flex: 1 0 auto; 
+}
+
+footer {
+    flex-shrink: 0; 
+    background-color: #212529; 
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.row.g-4 > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 1.5rem;
+    margin: 0; 
+}
+.row.g-3 {
+      gap: 1.5rem; 
+    }
+
+.row.g-4 > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+}
+
+@media (max-width: 768px) {
+  .container.d-flex.gap-5 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  .form-wrapper {
+    width: 100% !important;
+    max-width: 400px !important;
+    margin-bottom: 20px !important;
+    height: auto !important; /* sabit height’i override ediyor */
+  }
+
+  /* Hesap alanı ve butonlar */
+  .form-wrapper input,
+  .form-wrapper button {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+    box-sizing: border-box;
+  }
+
+  /* Hesap makinesi tuşları */
+  .form-wrapper .d-flex.justify-content-between,
+  .form-wrapper .d-flex.justify-content-center {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  .form-wrapper .btn {
+    width: 30% !important;
+    min-width: 60px !important;
+    margin-bottom: 5px !important;
+  }
+}
+
+.highlight {
+  background-color: #7dab7d;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+
+
